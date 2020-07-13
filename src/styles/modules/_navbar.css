@@ -1,7 +1,7 @@
 .navbar {    
     padding-top: 10px;
     text-align: center;
-    font-size: 5vh;
+    font-size: 4vh;
     background-color: #f0d9da;
     color: #888888;
 }
@@ -13,6 +13,6 @@
 }
 
 img {
-    height: 15vh;
+    height: 10vh;
     width: auto;
 }

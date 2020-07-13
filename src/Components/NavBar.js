@@ -11,6 +11,7 @@ class Navbar extends Component{
                         <ul className="navbar-nav">
                             <li className="nav-item">Portfolio</li>
                             <li className="nav-item">About</li>
+                            <li className="nav-item">Book</li>
                             <li className="nav-item">Pricing</li>
                             <li className="nav-item">Contact</li>
                         </ul>

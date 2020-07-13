@@ -9,7 +9,7 @@ class Header extends Component {
                 <div className="header-content">
                     <h1 className="header-title">Cakes By Emily Eve</h1>
                     <h2 className="header-subtitle">Experience Love At First Bite!</h2>
-                    <button>Book Now!</button>
+                    <button className="header-btn">Book A Consultation</button>
                 </div>
             </header>
         )
