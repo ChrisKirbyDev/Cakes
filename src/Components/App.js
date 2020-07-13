@@ -1,18 +1,18 @@
-import React, {Component} from "react";
+import React, {Component} from "./node_modules/react";
 import {hot} from "react-hot-loader";
-import NavBar from "../Components/NavBar";
+import Navbar from "./navbar";
 import "../styles/styles.css";
 
 // Pages
 
-import Home from "../components/Pages/Home";
+import Home from "./pages/home";
 
 class App extends Component{
   render(){
     return(
-      <NavBar>
+      <Navbar>
         <Home />
-      </NavBar>
+      </Navbar>
     );
   }
 }

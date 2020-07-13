@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import Header from "../Common/Header";
+import React, {Component} from "./node_modules/react";
+import Header from "../common/header";
 
 // Re-usable components
 
