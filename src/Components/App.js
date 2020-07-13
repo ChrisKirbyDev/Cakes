@@ -5,14 +5,13 @@ import "../styles/styles.css";
 
 // Pages
 
-
-
+import Home from "../components/Pages/Home";
 
 class App extends Component{
   render(){
     return(
       <NavBar>
-        
+        <Home />
       </NavBar>
     );
   }
