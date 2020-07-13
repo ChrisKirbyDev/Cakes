@@ -1,4 +1,4 @@
-import React, {Component} from "./node_modules/react";
+import React, {Component} from "react";
 import {hot} from "react-hot-loader";
 import Navbar from "./navbar";
 import "../styles/styles.css";
