@@ -1,13 +1,19 @@
 import React, {Component} from "react";
 import {hot} from "react-hot-loader";
+import NavBar from "../Components/NavBar";
 import "../styles/styles.css";
+
+// Pages
+
+
+
 
 class App extends Component{
   render(){
     return(
-      <div className="site-header">
-        <h1> Hello, World</h1>
-      </div>
+      <NavBar>
+        
+      </NavBar>
     );
   }
 }
