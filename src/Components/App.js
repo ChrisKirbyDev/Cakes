@@ -9,11 +9,12 @@ import Home from "./pages/home";
 
 class App extends Component{
   render(){
-    return(
-      <Navbar>
-        <Home />
-      </Navbar>
-    );
+    return (
+      <>
+       <Navbar />
+       <Home />
+      </>
+    )
   }
 }
 

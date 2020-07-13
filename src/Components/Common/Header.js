@@ -3,14 +3,14 @@ import React, {Component} from "react";
 class Header extends Component {
     render(){
         return(
-            <header>
-                <div>
-                    <div>Cakes By Emily Eve</div>
-                    <div>Experience Love At First Bite!</div>
+            <header className="header-section">
+                <div className="header-content">
+                    <h1 className="header-title">Cakes By Emily Eve</h1>
+                    <h2 className="header-subtitle">Experience Love At First Bite!</h2>
                     <button>Book Now!</button>
                 </div>
             </header>
-        );
+        )
     }
 }
 

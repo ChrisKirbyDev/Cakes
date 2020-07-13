@@ -1,17 +1,18 @@
 .navbar {    
     padding-top: 10px;
     text-align: center;
-    font-size: 6vh;
+    font-size: 5vh;
+    background-color: #f0d9da;
+    color: #888888;
 }
 
 .nav-item {
     list-style: none;
     display: inline-block;
-    padding-right: 20px;
-    padding-top: 5px;
+    padding: 5px 40px 0px 40px;
 }
 
 img {
-    height: 30vh;
+    height: 15vh;
     width: auto;
 }
