@@ -4,12 +4,14 @@ function Portfolio() {
         let portfolioArr = [1, 2, 3, 4, 5];
         const [x, setX] = useState(0);
         const goLeft = () => {
+            console.log(x)
             setX(x + 100);
         };
         const goRight = () => {
+            console.log(x)
             setX(x - 100);
         };
-        
+
         return(
             <section className="portfolio-section" id="section">
                 <div className="portfolio-container">

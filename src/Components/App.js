@@ -1,21 +1,17 @@
-import React, {Component} from "react";
-import {hot} from "react-hot-loader";
+import React from "react";
 import Navbar from "./navbar";
 import "../styles/styles.css";
 
 // Pages
-
 import Home from "./pages/home";
 
-class App extends Component{
-  render(){
+function App(){
     return (
       <>
        <Navbar />
        <Home />
       </>
     )
-  }
 }
 
-export default hot(module)(App);
+export default App;

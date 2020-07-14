@@ -1,8 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import Image from "../assets/img/header-image.png";
 
-class Header extends Component {
-    render(){
+function Header(){
         return(
             <header className="header-section">
                 <img className="header-image" src={Image} alt="Cakes By Emily Eve Header"/>
@@ -13,7 +12,6 @@ class Header extends Component {
                 </div>
             </header>
         )
-    }
 }
 
 export default Header;
