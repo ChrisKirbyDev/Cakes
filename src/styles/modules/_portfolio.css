@@ -30,7 +30,7 @@
 
 .portfolio-img {    
     width: 50%;
-    height: 50%;
+    height: 75%;
     border-radius: 20%;   
     margin-top: 20vh; 
 }
@@ -45,7 +45,6 @@
     background: none;
     border: none;
     outline: none;
-
 }
 
 #goRight{
