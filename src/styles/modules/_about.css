@@ -1,0 +1,28 @@
+.about-section {
+    overflow: hidden;
+    padding-left: 18px;
+    padding-right: 18px;
+    max-width: 1236px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px 0 100px 0;
+}
+
+.profile-image {
+    padding: 100px 0 0 0;
+    margin-left: 100px;
+    float: left;
+    height: 600px;
+    width: auto;
+}
+
+.about-text {
+    margin: 120px 150px 0 0;
+    padding: 10px;
+    text-align: center;
+    float: right;
+    width: 400px;
+    font-size: 3vh;
+    background-color: rgba(240, 217, 218, 0.6);
+}
