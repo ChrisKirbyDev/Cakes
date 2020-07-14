@@ -1,7 +1,24 @@
 import React, { useState } from "react";
+import PortfolioImg from "./portfolioimg";
+
+// Images
+
+import i1 from "../assets/img/01-thumbnail.jpg";
+import i2 from "../assets/img/02-thumbnail.jpg";
+import i3 from "../assets/img/03-thumbnail.jpg";
+import i4 from "../assets/img/04-thumbnail.jpg";
+import i5 from "../assets/img/05-thumbnail.jpg";
+import i6 from "../assets/img/06-thumbnail.jpg";
 
 function Portfolio() {    
-        let portfolioArr = [1, 2, 3, 4, 5];
+        let portfolioArr = [
+        <PortfolioImg src={i1} />,
+        <PortfolioImg src={i2} />,
+        <PortfolioImg src={i3} />,
+        <PortfolioImg src={i4} />,
+        <PortfolioImg src={i5} />,
+        <PortfolioImg src={i6} />
+    ];
         const [x, setX] = useState(0);
         const goLeft = () => {
             console.log(x)
@@ -17,10 +34,7 @@ function Portfolio() {
         return(
             <section className="portfolio-section" id="section">
                 <div className="portfolio-container">
-                    <div className="portfolio-text-center">
-                        <h2 className="portfolio-section-heading">Portfolio</h2>
-                        <h3 className="portfolio-section-subheading">Here is some of the work I have created.</h3>
-                    </div>
+                    <h2>Portfolio</h2>
                     <div className="portfolio-slider">
                         {portfolioArr.map((item, index) => {
                             return (
@@ -30,10 +44,10 @@ function Portfolio() {
                             );
                         })}
                         <button id="goLeft" onClick={goLeft}>
-                            left
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
                         </button>
                         <button id="goRight" onClick={goRight}>
-                            right
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
