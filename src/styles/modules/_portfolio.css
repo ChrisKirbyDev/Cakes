@@ -1,0 +1,44 @@
+.portfolio-section {
+    text-align: center;    
+    color: #40514e;
+    height: 120vh;
+    background-color: rgba(240, 217, 218, 0.6);
+}
+
+.portfolio-slider {
+    border: 1px solid red;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.portfolio-slide {
+    border: 1px solid blue;
+    min-width: 100%;
+    height: 80vh;
+    
+}
+
+#goLeft {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 10%;
+    height: 80%;
+    background: none;
+}
+
+#goRight{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 10%;
+    height: 80%;
+    background: none;
+}

@@ -1,19 +1,40 @@
-import React, {Component} from "react";
+import React, { useState } from "react";
 
-class Header extends Component {
-    render(){
+function Portfolio() {    
+        let portfolioArr = [1, 2, 3, 4, 5];
+        const [x, setX] = useState(0);
+        const goLeft = () => {
+            setX(x + 100);
+        };
+        const goRight = () => {
+            setX(x - 100);
+        };
+        
         return(
             <section className="portfolio-section" id="section">
                 <div className="portfolio-container">
                     <div className="portfolio-text-center">
-                        <h2 className="portfolio-section-heading"></h2>
-                        <h3 className="portfolio-section-subheading"></h3>
+                        <h2 className="portfolio-section-heading">Portfolio</h2>
+                        <h3 className="portfolio-section-subheading">Here is some of the work I have created.</h3>
                     </div>
-                    <div class="portfolio-row">
-
+                    <div className="portfolio-slider">
+                        {portfolioArr.map((item, index) => {
+                            return (
+                                <div key={index} className="portfolio-slide" style={{transform: `translateX(${x}%)`}}>
+                                    {item}
+                                </div>
+                            );
+                        })}
+                        <button id="goLeft" onClick={goLeft}>
+                            left
+                        </button>
+                        <button id="goRight" onClick={goRight}>
+                            right
+                        </button>
                     </div>
                 </div>
             </section>
-        )
-    }
+        )    
 }
+
+export default Portfolio;
