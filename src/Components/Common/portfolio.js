@@ -5,11 +5,13 @@ function Portfolio() {
         const [x, setX] = useState(0);
         const goLeft = () => {
             console.log(x)
-            setX(x + 100);
+            // moves to end of the array
+            x === 0 ? setX(-100 * (portfolioArr.length - 1)) : setX(x + 100);
         };
         const goRight = () => {
             console.log(x)
-            setX(x - 100);
+            // set maximum length of portfolioArr & moves to the start of the array
+            x=== -100 * (portfolioArr.length - 1) ? setX(0) : setX(x - 100);
         };
 
         return(
