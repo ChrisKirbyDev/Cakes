@@ -4,6 +4,7 @@ import React from "react";
 import Header from "../common/header";
 import Portfolio from "../common/portfolio";
 import About from "../common/about";
+import Pricing from "../common/pricing";
 
 function Home(){
         return (
@@ -11,6 +12,7 @@ function Home(){
                 <Header />
                 <Portfolio />
                 <About />
+                <Pricing />
             </div>            
         )
 }
