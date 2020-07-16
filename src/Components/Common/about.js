@@ -3,7 +3,7 @@ import Image from "../assets/img/about.png";
 
 function About(){
     return(
-        <div className="about-section">
+        <div className="about-section"> 
             <h2>The First Cake I Made Was For Others.</h2>
             <h3>Ever since, i've been making cakes <strong>styled for everyone.</strong></h3>
             <div className="about-image">
