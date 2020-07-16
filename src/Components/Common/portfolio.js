@@ -34,7 +34,9 @@ function Portfolio() {
         return(
             <section className="portfolio-section" id="section">
                 <div className="portfolio-container">
-                    <h2>Portfolio</h2>
+                    <div className="portfolio-title">
+                        <h2>Portfolio</h2>
+                    </div>                    
                     <div className="portfolio-slider">
                         {portfolioArr.map((item, index) => {
                             return (
