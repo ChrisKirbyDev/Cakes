@@ -40,6 +40,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "react-hot-loader": "^4.3.11"
+    "react-hot-loader": "^4.3.11",
+    "react-icons": "^3.10.0"
   }
 }
