@@ -1,9 +1,18 @@
-.pricing-table-wrapper {
-    padding: 50px 0px;
+.pricing-section {
+    text-align: center;
+    background-color: rgba(240, 217, 218, 0.4 );
+    color: #40514e;
+}
+
+.pricing-title {    
+    padding-top: 100px;
+}
+
+.pricing-table-wrapper {    
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -70,15 +79,15 @@
 }
 
 .bg-1 {
-    background: linear-gradient(135deg, #00f260, #0575E6);
+    background: linear-gradient(135deg, #ffaaa5, #ffaaa5);
 }
 
 .bg-2 {
-    background: linear-gradient(135deg, #8a2387, #f27121);
+    background: linear-gradient(135deg, #a8e6cf, #a8e6cf);
 }
 
 .bg-3 {
-    background: linear-gradient(135deg, #3f5efb, #fc466b);
+    background: linear-gradient(135deg, #a5dee5, #a5dee5);
 }
 
 .card label {

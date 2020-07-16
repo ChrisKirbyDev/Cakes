@@ -2,6 +2,10 @@ import React from "react";
 
 function Pricing(){
     return(
+        <div className="pricing-section">
+            <div className="pricing-title">
+                <h1>Pricing</h1>
+            </div>
         <div className="pricing-table-wrapper">
             <div className="container">
                 <div className="row">
@@ -43,6 +47,7 @@ function Pricing(){
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
