@@ -1,0 +1,18 @@
+.contact-container {
+    text-align: center;
+}
+
+.facebook {
+    color: #4968ad;
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+  }
+
+.facebook:hover{
+    transform: translateY(-2px);
+}
+
+.email {
+    color: #40514e;
+}
