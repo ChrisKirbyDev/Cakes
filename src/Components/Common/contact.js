@@ -5,7 +5,7 @@ import {
   faFacebook,
   faTwitter,
   faInstagram
-} from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/free-brands-svg-icons";
 
 function Contact(){
   const currentYear = new Date().getFullYear();
