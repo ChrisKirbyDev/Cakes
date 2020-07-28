@@ -1,5 +1,6 @@
 .contact-container {
     text-align: center;
+    padding: 25px 50px;
 }
 
 .facebook {
@@ -14,5 +15,10 @@
 }
 
 .email {
-    color: #40514e;
+    color: #4968ad;
+}
+
+.text {
+    padding: 20px 0 20px;
+    margin-left: 20px;    
 }
