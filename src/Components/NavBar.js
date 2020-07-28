@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Logo from "../components/assets/img/cbee_logo.svg";
+import Form from "../components/common/form.js";
 
 class Navbar extends Component{
     render(){
@@ -9,11 +10,11 @@ class Navbar extends Component{
                     <img src={Logo} alt="website logo" />
                     <div className="nav-container">
                         <ul className="navbar-nav">
-                            <li className="nav-item">Portfolio</li>
-                            <li className="nav-item">About</li>
-                            <li className="nav-item">Book</li>
-                            <li className="nav-item">Pricing</li>
-                            <li className="nav-item">Contact</li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="">Book</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
