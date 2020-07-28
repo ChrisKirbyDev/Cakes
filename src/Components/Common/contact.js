@@ -12,6 +12,7 @@ function Contact(){
   return (
     <footer className="contact">
         <div className="contact-container">
+          <h3 className="text">Get In Touch</h3>
           <a 
             href="https://www.facebook.com/cakesbyemilyeve"
             className="facebook"
@@ -24,7 +25,7 @@ function Contact(){
           >
             <FontAwesomeIcon icon={faEnvelope} size="2x" />
           </a>
-          <p>Copyright ⓒ {currentYear}</p>
+          <p className="text">Copyright ⓒ {currentYear}</p>
         </div>
         
     </footer>
