@@ -1,7 +1,7 @@
 .header-section {
     text-align: center;    
     color: #40514e;
-    padding-bottom: 25vh;
+    padding: 31vh 0 25vh 0;
 }
 
 
@@ -12,10 +12,6 @@
     z-index: -1;
     width: 100%;
     height: auto;
-}
-
-.header-section {
-    padding-top: 100px;
 }
 
 h1 {

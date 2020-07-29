@@ -32,7 +32,7 @@ function Portfolio() {
         };
 
         return(
-            <section className="portfolio-section" id="section">
+            <section className="portfolio-section" id="portfolio">
                 <div className="portfolio-container">
                     <div className="portfolio-title">
                         <h2>Portfolio</h2>

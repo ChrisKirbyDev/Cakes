@@ -10,7 +10,7 @@ import {
 function Contact(){
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="contact">
+    <footer className="contact" id="contact">
         <div className="contact-container">
           <h3 className="text">Get In Touch</h3>
           <a 
@@ -25,7 +25,7 @@ function Contact(){
           >
             <FontAwesomeIcon icon={faEnvelope} size="2x" />
           </a>
-          <p className="text">Copyright ⓒ {currentYear}</p>
+          <p className="copyright">Copyright ⓒ {currentYear}</p>
         </div>
         
     </footer>

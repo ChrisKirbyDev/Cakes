@@ -16,9 +16,21 @@
 
 .email {
     color: #4968ad;
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+}
+
+.email:hover{
+    transform: translateY(-2px);    
 }
 
 .text {
     padding: 20px 0 20px;
     margin-left: 20px;    
+}
+
+.copyright {
+    padding: 20px 0 20px;
+    margin-left: 5px;
 }
