@@ -10,11 +10,12 @@
     color: #40514e;
 }
 
-.about-titles {
-    padding: 100px;
+.about-title {
+    font-size: 50vh;
 }
 
-.profile-image {    
+.profile-image {  
+    margin-top: 20px;  
     margin-left: 100px;
     float: left;
     height: 600px;
@@ -23,15 +24,95 @@
 }
 
 .about-text {
+    margin-top: 20px;
     text-align: center;
     float: right;
     width: 700px;
     font-size: 3vh;
-    background-color: rgba(240, 217, 218, 0.6);
+    background-color: rgba(240, 217, 218, 0.8);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 h3 {
     font-size: 5vh;
     font-weight: 400;
+}
+
+@media screen and (max-width: 960px) {
+
+    .about-image {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-image {
+        height: 350px;
+        width: auto;        
+        padding: 50px 50px 50px 60px;
+        box-shadow: none;
+    }
+
+    .about-text {
+        width: 400px;
+        margin-right: 35px;
+    }
+}
+
+@media screen and (width: 375px) { // iPhone X
+
+    .about-image {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-image {
+        height: 300px;
+        width: auto;
+        padding: 50px 0 50px 20px;
+        box-shadow: none; 
+    }
+
+    .about-text {
+        width: 360px;
+        margin-right: 7px;
+    }
+}
+
+@media screen and (width: 411px) { // Pixel 2
+
+    .about-image {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-image {
+        height: 300px;
+        width: auto;
+        padding: 50px 0 50px 30px;
+        box-shadow: none; 
+    }
+
+    .about-text {
+        width: 400px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (width: 360px) { // Galaxy S5
+    .about-image {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-image {
+        height: 300px;
+        width: auto;
+        padding: 50px 0 50px 15px;
+        box-shadow: none; 
+    }
+
+    .about-text {
+        width: 350px;
+        margin-right: 5px;
+    }
 }

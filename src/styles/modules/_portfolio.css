@@ -34,7 +34,7 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); 
 }
 
-#goLeft {
+.goLeft {
     position: absolute;
     top: 35%;
     left: 0;
@@ -47,7 +47,7 @@
     transition: 0.5s;
 }
 
-#goRight{
+.goRight{
     position: absolute;
     top: 35%;
     right: 0;
@@ -60,14 +60,47 @@
     transition: 0.5s;  
 }
 
-#goRight:hover{
+.goRight:hover{
     background-color: rgba(240, 217, 218, 0.3);
     cursor: pointer;
     color: whitesmoke;
 }
 
-#goLeft:hover{
+.goLeft:hover{
     background-color: rgba(240, 217, 218, 0.3);
     cursor: pointer;
     color: whitesmoke;
+}
+
+@media screen and (max-width: 960px) {
+    .portfolio-section {
+        height: 70vh;
+    }
+
+    .portfolio-title {
+        padding: 20px;
+    }
+
+    .portfolio-slider {
+        height: 50vh;
+    }
+
+    .portfolio-slide {
+        height: 50vh;
+    }
+
+    img.portfolio-img {        
+        height: 75%;
+        width: 60%;
+    }
+
+    .goRight {
+        display: inline;
+        height: 80%;
+    }
+
+    .goLeft { 
+        display: inline;
+        height: 80%;
+    }
 }
