@@ -14,7 +14,8 @@
     font-size: 50vh;
 }
 
-.profile-image {    
+.profile-image {  
+    margin-top: 20px;  
     margin-left: 100px;
     float: left;
     height: 600px;
@@ -23,6 +24,7 @@
 }
 
 .about-text {
+    margin-top: 20px;
     text-align: center;
     float: right;
     width: 700px;
