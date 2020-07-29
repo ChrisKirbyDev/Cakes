@@ -45,10 +45,10 @@ function Portfolio() {
                                 </div>
                             );
                         })}
-                        <button id="goLeft" onClick={goLeft}>
+                        <button className="goLeft" onClick={goLeft}>
                             <i className="fa fa-chevron-left" aria-hidden="true"></i>
                         </button>
-                        <button id="goRight" onClick={goRight}>
+                        <button className="goRight" onClick={goRight}>
                             <i className="fa fa-chevron-right" aria-hidden="true"></i>
                         </button>
                     </div>
