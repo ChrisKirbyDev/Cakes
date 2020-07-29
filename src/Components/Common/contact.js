@@ -25,7 +25,7 @@ function Contact(){
           >
             <FontAwesomeIcon icon={faEnvelope} size="2x" />
           </a>
-          <p className="text">Copyright ⓒ {currentYear}</p>
+          <p className="copyright">Copyright ⓒ {currentYear}</p>
         </div>
         
     </footer>

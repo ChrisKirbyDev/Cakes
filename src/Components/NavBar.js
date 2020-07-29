@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Logo from "../components/assets/img/cbee_logo.svg";
-import Form from "../components/common/form.js";
 
 class Navbar extends Component{
     render(){
