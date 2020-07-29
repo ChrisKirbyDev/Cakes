@@ -1,23 +1,36 @@
 import React, { Component } from "react";
+import { Menuitems, MenuItems } from "./common/menuitems";
+import { Button } from "./common/button";
 import Logo from "../components/assets/img/cbee_logo.svg";
 
-class Navbar extends Component{
+class Navbar extends Component {
+    state = { clicked: false }
+
+    handleClick = () => {
+        this.setState({ clicked: !this.state.clicked })
+    }
+
     render(){
-        return(
-            <div>
+        return(            
                 <nav className="navbar" i="mainNav">
-                    <img src={Logo} alt="website logo" />
-                    <div className="nav-container">
-                        <ul className="navbar-nav">
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="">Book</a></li>
-                            <li><a href="#pricing">Pricing</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                    <img className="navbar-logo" src={Logo} alt="website logo" />                    
+                        <div className="menu-icon" onClick={this.handleClick}>
+                            <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
+                        </div>
+                        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
+                            {MenuItems.map((item, index) => {
+                                return(
+                                    <li key={index}>
+                                        <a className={item.cName} href={item.url}>
+                                        {item.title}
+                                        </a>
+                                    </li>
+                                )
+                            })}                                                        
                         </ul>
-                    </div>
+                        <Button>Book</Button>
                 </nav>
-            </div>
+            
         );
     }
 }
