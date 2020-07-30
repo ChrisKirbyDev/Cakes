@@ -16,7 +16,6 @@ function Home(){
                 <About />
                 <Pricing />
                 <Contact />
-                <Form />
             </div>            
         )
 }

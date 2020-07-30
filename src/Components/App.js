@@ -1,19 +1,19 @@
 import React from "react";
 import Navbar from "./navbar";
 import "../styles/styles.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Pages
 import Home from "./pages/home";
+import Form from "./common/form";
 
 function App(){  
     return (
       <Router>
       <div>
        <Navbar />
-       <Route
-          path="/"
-          exact component={Home} />       
+        <Route exact path="/" component={Home} />
+        <Route path="/Form" component={Form} />     
       </div>
       </Router>
     )
