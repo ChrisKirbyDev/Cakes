@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Pages
 import Home from "./pages/home";
+import Form from "./common/home";
 
 function App(){  
     return (
@@ -13,7 +14,10 @@ function App(){
        <Navbar />
        <Route
           path="/"
-          exact component={Home} />       
+          exact component={Home} />
+        <Route
+          path="/form"
+          exact component={Form} />   
       </div>
       </Router>
     )
