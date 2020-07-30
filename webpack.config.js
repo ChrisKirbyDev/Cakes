@@ -19,14 +19,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/i,
-        use: "file-loader"
+        use: "file-loader",        
       },      
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
     path: path.resolve(__dirname, "public/index.html"),
-    publicPath: "/",
+    publicPath: "/dist/",
     filename: "bundle.js"
   },  
   devServer: {
