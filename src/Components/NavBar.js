@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { MenuItems } from "./common/menuitems";
 import { Button } from "./common/button";
+import { Link } from "react-router-dom";
 import Logo from "../components/assets/img/cbee_logo.svg";
 
 class Navbar extends Component {
@@ -13,7 +14,7 @@ class Navbar extends Component {
     render(){
         return(            
                 <nav className="navbar" i="mainNav">
-                    <img className="navbar-logo" src={Logo} alt="website logo" />                    
+                    <Link to="/"><img className="navbar-logo" src={Logo} alt="website logo" /></Link>                    
                         <div className="menu-icon" onClick={this.handleClick}>
                             <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
                         </div>

@@ -4,7 +4,7 @@
   "description": "SPA with form for cakery",
   "main": "index.js",
   "scripts": {
-    "test": "npx webpack-dev-server",
+    "test": "webpack-dev-server",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

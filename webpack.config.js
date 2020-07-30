@@ -19,21 +19,22 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/i,
-        use: "file-loader"
-      }
+        use: "file-loader",        
+      },      
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
+    path: path.resolve(__dirname, "public/index.html"),
     publicPath: "/dist/",
     filename: "bundle.js"
-  },
+  },  
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
+    hotOnly: true,
+    historyApiFallback: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin(), new HtmlWebpackPlugin()]
 };
