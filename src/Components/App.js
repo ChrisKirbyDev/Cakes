@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Pages
 import Home from "./pages/home";
-import Form from "./common/home";
+import Form from "./common/form";
 
 function App(){  
     return (
