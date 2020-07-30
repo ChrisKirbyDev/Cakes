@@ -21,7 +21,7 @@ export const MenuItems = [
     },
     {
         title: "Book",
-        url: "#",
+        url: "#book",
         cName: "nav-links-mobile"
     }
 ]

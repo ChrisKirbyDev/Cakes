@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menuitems, MenuItems } from "./common/menuitems";
+import { MenuItems } from "./common/menuitems";
 import { Button } from "./common/button";
 import Logo from "../components/assets/img/cbee_logo.svg";
 

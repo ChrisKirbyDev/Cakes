@@ -140,8 +140,10 @@
 }
 
 @media screen and (max-width: 960px) {
+
     .pricing-title {
-        padding: 0 0 20px 0;
+        padding: 30px;
+        margin-bottom: -15vh;
     }
 
     .col {
@@ -153,9 +155,9 @@
     }
 
     .pricing-table-wrapper {
+        padding-top: -20px;
         height: 220vh;
         width: auto;
-
     }
 
     .row {
@@ -166,6 +168,28 @@
     }
 
     .card {
-        margin: 50px;
+        margin: 20px
+    }
+}
+
+@media screen and (width: 360px) { // Galaxy S5
+    .pricing-title {
+        padding: 30px;
+        margin-bottom: -10vh;
+    }
+
+    .pricing-table-wrapper {
+        height: 230vh;
+    }
+}
+
+@media screen and (width: 375px) { // iPhone X
+    .pricing-title {
+        padding: 30px;
+        margin-bottom: 10vh;
+    }
+
+    .pricing-table-wrapper {
+        height: 200vh;
     }
 }

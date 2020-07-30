@@ -9,10 +9,12 @@ import Home from "./pages/home";
 function App(){  
     return (
       <Router>
-      <>
+      <div>
        <Navbar />
-       <Route path="/" exact component={Home} />
-      </>
+       <Route
+          path="/"
+          exact component={Home} />       
+      </div>
       </Router>
     )
 }
