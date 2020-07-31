@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "SPA with form for cakery",
   "main": "index.js",
+  "proxy": "http://localhost:3001",
   "scripts": {
     "test": "webpack-dev-server",
     "storybook": "start-storybook -p 6006",

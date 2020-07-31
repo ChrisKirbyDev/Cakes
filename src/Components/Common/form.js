@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import axios from "axios";
 import Image from "../assets/img/header-image.png";
+
 
 class Form extends Component {
 
@@ -46,6 +48,29 @@ class Form extends Component {
 
 
     // end of handle inputs
+
+    formSubmit=(e)=>{
+        e.preventDefault();
+
+        let data = {
+            name: this.state.name,
+            email:this.state.email,
+            mobile:this.state.mobile,
+            address:this.state.address,
+            message:this.state.message,
+        }
+
+        axios.post("/api/form", data)
+        .then(res=>{
+            this.setState({
+                sent:true,
+            }, this.resetForm())
+        }).catch(()=>{
+            console.log("message not sent");
+        })
+    }
+
+    // for resetting initial data
 
     
     render() {
@@ -142,9 +167,10 @@ class Form extends Component {
                                 cols="30" 
                                 rows="10" 
                                 className="textArea" 
-                                placeholder="Please give me as much detail as you can..." required>
+                                placeholder="Please give me as much detail as you can..." required
                                 value={this.state.message}
                                 onChange={this.handleMessage} 
+                            >                                
                             </textarea>
                         </div>
                         {/* End of Single Item */}
