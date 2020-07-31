@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Header(){
         return(
-            <header className="header-section">
+            <header className="header-section" id="header">
                 <img className="header-image" src={Image} alt="Cakes By Emily Eve Header"/>
                 <div className="header-content">
                     <h1 className="header-title">Life Is Sweet.</h1>

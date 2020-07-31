@@ -1,9 +1,12 @@
 import React, {Component} from "react";
+import Image from "../assets/img/header-image.png";
 
 function Form() {
     return (
+        <section className="form">
         <div className="container">
             <header className="header">
+            <img className="header-image" src={Image} alt="Cakes By Emily Eve Header"/>
                 <h1 id="title" className="text-center">Booking & Consultation Form</h1>
                 <p id="description" className="description text-center">
                     Thank you for taking the time to fill out this form.
@@ -81,7 +84,8 @@ function Form() {
                 </button>
             </div>
             </form>
-        </div>
+            </div>
+        </section>
     )
 }
 
