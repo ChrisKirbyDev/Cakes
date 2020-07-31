@@ -72,12 +72,29 @@ class Form extends Component {
 
     // for resetting initial data
 
+    resetForm=()=>{
+        this.setState({
+            name: "",
+            email: "",
+            mobile: "",
+            address: "",
+            message: "",
+        })
+
+        setTimeout(()=>{
+            this.setState({
+                sent:false,
+            })
+        },3000)
+    }
+
     
     render() {
         return (
             <section className="form-section">
+            <img className="header-image" src={Image} alt="Cakes By Emily Eve Header"/>
                 <div className="form-container">
-                    <form className="form">
+                    <form onSubmit={this.formSubmit} className="form">
                         {/* Single Item */}
                         <div className="singleItem">
                             <label 
@@ -174,7 +191,7 @@ class Form extends Component {
                             </textarea>
                         </div>
                         {/* End of Single Item */}
-                        <div className="msg">Message has been sent</div>
+                        <div className={this.state.sent ? "msg msgAppear":"msg"}>Message has been sent</div>
                         <div className="submit">
                             <button className="submit-btn">Submit</button>
                         </div>

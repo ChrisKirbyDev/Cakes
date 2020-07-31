@@ -7,7 +7,11 @@
   "scripts": {
     "test": "webpack-dev-server",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+      "start": "node submit.js",
+      "server": "nodemon submit.js",
+      "client": "npm start --prefix client",
+      "dev":"concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
