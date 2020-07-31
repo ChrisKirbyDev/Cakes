@@ -1,88 +1,205 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
+import axios from "axios";
+import Image from "../assets/img/header-image.png";
 
-function Form() {
-    return (
-        <div className="container">
-            <header className="header">
-                <h1 id="title" className="text-center">Booking & Consultation Form</h1>
-                <p id="description" className="description text-center">
-                    Thank you for taking the time to fill out this form.
-                </p>
-            </header>
-                <form id="survey-form">
-            <div className="form-group">
-                <label id="name-label" for="name">Name</label>
-                <input type="text" name="name" id="name" className="form-control" placeholder="Enter your name" required />
-            </div>
-            <div className="form-group">
-                <label id="email-label" for="email">Email</label>
-                <input type="email" name="email" id="email" className="form-control" placeholder="Enter your Email" required />
-            </div>
-            <div className="form-group">
-            <label id="number-label" for="number">Mobile</label>
-            <input type="tel" name="age" id="number" className="form-control" placeholder="Enter your Mobile" />
-            </div>
-            <div className="form-group">
-            <p>Sponge Flavour</p>
-            <select id="dropdown" name="role" className="form-control" required>
-                <option disabled selected value>Select A Flavour</option>
-                <option value="vanilla">Vanilla</option>
-                <option value="chocolate">Chocolate</option>
-                <option value="carrot">Carrot</option>
-                <option value="coffee">Coffee</option>
-                <option value="lemon">Lemon</option>
-            </select>
-            </div>
 
-            <div className="form-group">
-                <p>Would you like a wedding cake consultation?</p>
-                <label>
-                    <input name="user-recommend" value="yes" type="radio" className="input-radio" checked />Yes</label>
-                <label>
-                    <input name="user-recommend" value="no" type="radio" className="input-radio" />No</label>                
-            </div>
+class Form extends Component {
 
-            <div className="form-group">
-                <p>Filling</p>
-                <select id="most-like" name="mostLike" className="form-control" required>
-                    <option disabled selected value>Select A Filling</option>
-                    <option value="vanilla_buttercream">Vanilla Buttercream</option>
-                    <option value="vanilla_buttercream_raspberryjam">Vanilla Buttercream/Raspberry Jam</option>
-                    <option value="chocolate_ganache">Chocolate Ganache</option>
-                    <option value="chocolate_buttercream">Chocolate Buttercream</option>
-                    <option value="lemon_buttercream">Lemon Buttercream/Lemon Curd</option>
-                    <option value="creamcheese">Creamcheese</option>
-                    <option value="coffee_buttercream">Coffee Buttercream</option>
-                </select>
-            </div>
+    state={
+        name: "",
+        email: "",
+        mobile: "",
+        address: "",
+        message: "",
+        sent:false
+    }
 
-            <div className="form-group">
-                <p>
-                    When are you available?
-                </p>
-                <label><input name="prefer" value="available" type="datetime-local" className="input-checkbox" /></label>
-            </div>
+    // handle inputs
 
-            <div className="form-group">
-                <p>
-                When would you like it ready?
-                </p>
-                <label><input name="prefer" value="ready" type="datetime-local" className="input-checkbox" /></label>
-            </div>
+    handleName=(e)=>{
+        this.setState({
+            name:e.target.value
+        })
+    }
 
-            <div className="form-group">
-              <p>What design would you like?</p>
-              <textarea id="comments" className="input-textarea" name="comment" placeholder="Please give me as much detail as you can..."></textarea>
-            </div>
+    handleEmail=(e)=>{
+        this.setState({
+            email:e.target.value
+        })
+    }
 
-            <div className="form-group">
-                <button type="submit" id="submit" className="submit-button">
-                  Submit
-                </button>
-            </div>
-            </form>
-        </div>
-    )
+    handleMobile=(e)=>{
+        this.setState({
+            mobile:e.target.value
+        })
+    }
+
+    handleAddress=(e)=>{
+        this.setState({
+            address:e.target.value
+        })
+    }
+
+    handleMessage=(e)=>{
+        this.setState({
+            message:e.target.value
+        })
+    }
+
+
+    // end of handle inputs
+
+    formSubmit=(e)=>{
+        e.preventDefault();
+
+        let data = {
+            name: this.state.name,
+            email:this.state.email,
+            mobile:this.state.mobile,
+            address:this.state.address,
+            message:this.state.message,
+        }
+
+        axios.post("/api/form", data)
+        .then(res=>{
+            this.setState({
+                sent:true,
+            }, this.resetForm())
+        }).catch(()=>{
+            console.log("message not sent");
+        })
+    }
+
+    // for resetting initial data
+
+    resetForm=()=>{
+        this.setState({
+            name: "",
+            email: "",
+            mobile: "",
+            address: "",
+            message: "",
+        })
+
+        setTimeout(()=>{
+            this.setState({
+                sent:false,
+            })
+        },3000)
+    }
+
+    
+    render() {
+        return (
+            <section className="form-section">
+            <img className="header-image" src={Image} alt="Cakes By Emily Eve Header"/>
+                <div className="form-container">
+                    <form onSubmit={this.formSubmit} className="form">
+                        {/* Single Item */}
+                        <div className="singleItem">
+                            <label 
+                                className="form-label" 
+                                id="name-label" 
+                                htmlFor="name">
+                                Name
+                            </label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                className="form-control"
+                                placeholder="Enter your name" required
+                                value={this.state.name}
+                                onChange={this.handleName}
+                            />
+                        </div>
+                        {/* End of Single Item */}
+                        {/* Single Item */}
+                        <div className="singleItem">
+                            <label 
+                            className="form-label" 
+                            id="email-label" 
+                            htmlFor="email">
+                            Email
+                            </label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="email" 
+                                className="form-control" 
+                                placeholder="Enter your Email" required
+                                value={this.state.email}
+                                onChange={this.handleEmail}
+                            />
+                        </div>
+                        {/* End of Single Item */}
+                        {/* Single Item */}
+                        <div className="singleItem">
+                            <label 
+                                className="form-label" 
+                                id="mobile-label" 
+                                htmlFor="mobile">
+                                Mobile
+                            </label>
+                            <input 
+                                type="tel" 
+                                name="mobile" 
+                                id="number" 
+                                className="form-control" 
+                                placeholder="Enter your Mobile"
+                                value={this.state.mobile}
+                                onChange={this.handleMobile}                             
+                            />
+                        </div>
+                        {/* End of Single Item */}
+                        {/* Single Item */}
+                        <div className="singleItem">
+                            <label 
+                                className="form-label" 
+                                id="address-label" 
+                                htmlFor="address">
+                                Address
+                            </label>
+                            <input 
+                                type="text" 
+                                name="address" 
+                                id="address" 
+                                className="form-control" 
+                                placeholder="Enter your address" required
+                                value={this.state.address}
+                                onChange={this.handleAddress} 
+                            />
+                        </div>
+                        {/* End of Single Item */}
+                        {/* Single Item */}
+                        <div className="text-area-singleItem">
+                            <label 
+                                className="form-label" 
+                                htmlFor="message">
+                                What design would you like?
+                            </label>
+                            <textarea 
+                                name="message" 
+                                id="" 
+                                cols="30" 
+                                rows="10" 
+                                className="textArea" 
+                                placeholder="Please give me as much detail as you can..." required
+                                value={this.state.message}
+                                onChange={this.handleMessage} 
+                            >                                
+                            </textarea>
+                        </div>
+                        {/* End of Single Item */}
+                        <div className={this.state.sent ? "msg msgAppear":"msg"}>Message has been sent</div>
+                        <div className="submit">
+                            <button className="submit-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        )
+    }
 }
 
 export default Form;

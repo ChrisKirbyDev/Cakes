@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "SPA with form for cakery",
   "main": "index.js",
+  "proxy": "http://localhost:3001",
   "scripts": {
     "test": "webpack-dev-server",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+      "start": "node submit.js",
+      "server": "nodemon submit.js",
+      "client": "npm start --prefix client",
+      "dev":"concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -45,6 +50,13 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.11",
+    "nodemon": "^2.0.4",
     "react-hot-loader": "^4.3.11",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0"
