@@ -46,8 +46,6 @@ let mailOptions = {
 };
 
 smtpTransport.sendMail(mailOptions, (error, response)=>{
-    console.log(error);
-    console.log(response);
     if(error){
         res.send(error)
     } else {
@@ -57,6 +55,10 @@ smtpTransport.sendMail(mailOptions, (error, response)=>{
 
 smtpTransport.close();
 
+})
+
+app.get("*", (req,res) => {
+    res.sendFile(path.resolve("client", "public", "index.html"))
 })
 
 const PORT = process.env.PORT||3000;

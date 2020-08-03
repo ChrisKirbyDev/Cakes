@@ -60,7 +60,7 @@ class Form extends Component {
             message:this.state.message,
         }
 
-        axios.post("/api/form", data)
+        axios.post("localhost:3000/api/form", data)
         .then(res=>{
             this.setState({
                 sent:true,
@@ -158,7 +158,7 @@ class Form extends Component {
                                 className="form-label" 
                                 id="address-label" 
                                 htmlFor="address">
-                                Address
+                                Wedding4
                             </label>
                             <input 
                                 type="text" 

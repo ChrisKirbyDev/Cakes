@@ -27,9 +27,9 @@ module.exports = {
     filename: "bundle.js"
   },  
   devServer: {
-    contentBase: path.join(__dirname, "public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
+    contentBase: path.resolve("client", "public"),
+    port: 4000,
+    publicPath: "http://localhost:4000/dist/",
     hotOnly: true,
     historyApiFallback: true
   },
