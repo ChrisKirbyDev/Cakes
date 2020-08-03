@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "SPA with form for cakery",
   "main": "index.js",
-  "proxy": "http://localhost:3001",
   "scripts": {
     "test": "npx webpack-dev-server",
+    "build": "webpack",
+    "dev:client": "webpack --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "start": "node submit.js",
     "server": "nodemon submit.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run dev:client\" \"npm run server\""
   },
   "repository": {
     "type": "git",
