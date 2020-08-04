@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MenuItems } from "./common/menuitems";
-import { Button } from "./common/button";
+import { Button } from "./common/Button";
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {

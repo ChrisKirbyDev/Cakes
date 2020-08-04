@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PortfolioImg from "./portfolioimg";
+import PortfolioImg from "./Portfolioimg";
 
 function Portfolio() {    
         let portfolioArr = [
