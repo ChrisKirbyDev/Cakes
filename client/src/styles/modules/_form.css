@@ -1,10 +1,6 @@
-.form-section {
-    padding-top: 100px;
-}
-
 .form-container {
     background-color: lightskyblue;   
-    margin: 100px auto; 
+    margin: 10px auto; 
     width: 90%;
     box-shadow: 1px 1px 4px 1px lightgrey;
 }
@@ -81,6 +77,19 @@
 
 .msgAppear {
     display: block;
+}
+
+.radio-control {
+    margin: 5px;
+}
+
+.booking-title {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.booking-subtitle {
+    text-align: center;
 }
 
 @media screen and (min-width: 664px){
