@@ -13,25 +13,21 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader",],        
+        use: ["style-loader", "css-loader"]
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/i,
-        use: "file-loader",        
-      },      
+        use: "file-loader"
+      }
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve("client", "public"),    
+    path: path.resolve("client", "public"),
     filename: "bundle.js"
-  },  
+  },
   devServer: {
     contentBase: path.resolve("client", "public"),
-    port: 4000,
-    publicPath: "http://localhost:4000/dist/",
-    hotOnly: true,
     historyApiFallback: true
-  },
-
+  }
 };

@@ -1,23 +1,14 @@
 import React, { useState } from "react";
-import PortfolioImg from "./portfolioimg";
-
-// Images
-
-import i1 from "../assets/img/01-thumbnail.jpg";
-import i2 from "../assets/img/02-thumbnail.jpg";
-import i3 from "../assets/img/03-thumbnail.jpg";
-import i4 from "../assets/img/04-thumbnail.jpg";
-import i5 from "../assets/img/05-thumbnail.jpg";
-import i6 from "../assets/img/06-thumbnail.jpg";
+import PortfolioImg from "./Portfolioimg";
 
 function Portfolio() {    
         let portfolioArr = [
-        <PortfolioImg src={i1} />,
-        <PortfolioImg src={i2} />,
-        <PortfolioImg src={i3} />,
-        <PortfolioImg src={i4} />,
-        <PortfolioImg src={i5} />,
-        <PortfolioImg src={i6} />
+        <PortfolioImg src="/img/01-thumbnail.jpg" />,
+        <PortfolioImg src="/img/02-thumbnail.jpg" />,
+        <PortfolioImg src="/img/03-thumbnail.jpg" />,
+        <PortfolioImg src="/img/04-thumbnail.jpg" />,
+        <PortfolioImg src="/img/05-thumbnail.jpg" />,
+        <PortfolioImg src="/img/06-thumbnail.jpg" />
     ];
         const [x, setX] = useState(0);
         const goLeft = () => {

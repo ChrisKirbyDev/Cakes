@@ -1,10 +1,6 @@
-.form-section {
-    padding-top: 100px;
-}
-
 .form-container {
     background-color: lightskyblue;   
-    margin: 100px auto; 
+    margin: 10px auto; 
     width: 90%;
     box-shadow: 1px 1px 4px 1px lightgrey;
 }
@@ -73,7 +69,6 @@
     padding: 3px;
     font-size: 16px;
     font-weight: bold;
-    color: rgb(5, 110, 5);
     background-color: #fff;
     border-radius: 5px;
     display: none;
@@ -81,6 +76,21 @@
 
 .msgAppear {
     display: block;
+}
+
+.radio-control {
+    margin: 5px;
+}
+
+.booking-title {
+    text-align: center;
+    padding-top: 100px;
+    color: #40514e;
+}
+
+.booking-subtitle {
+    text-align: center;
+    color: #40514e;
 }
 
 @media screen and (min-width: 664px){

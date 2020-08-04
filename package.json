@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx webpack-dev-server",
+    "dev:h": "npx webpack-dev-server --hot --inline",
     "build": "webpack",
     "dev:client": "webpack --watch",
     "storybook": "start-storybook -p 6006",
@@ -12,7 +13,7 @@
     "start": "node submit.js",
     "server": "nodemon submit.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run dev:client\" \"npm run server\""
+    "dev": "concurrently \"npm run dev:h\" \"npm run server\""
   },
   "repository": {
     "type": "git",
@@ -28,19 +29,14 @@
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-links": "^5.3.19",
-    "@storybook/addons": "^5.3.19",
-    "@storybook/react": "^5.3.19",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
     "style-loader": "^0.23.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
@@ -59,6 +55,7 @@
     "express": "^4.17.1",
     "nodemailer": "^6.4.11",
     "nodemon": "^2.0.4",
+    "react-datepicker": "^3.1.3",
     "react-hot-loader": "^4.3.11",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0"
