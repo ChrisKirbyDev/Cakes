@@ -1,17 +1,20 @@
+require("dotenv").config();
 const express = require("express");
-const bodyparser = require("body-parser");
+const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static(path.resolve("client", "public")));
 app.use(cors());
 
-app.get("/",()=>{
-    resizeBy.send("welcome to my form")
-})
+// app.get("/",(req,res)=>{
+//     res.send("welcome to my form")
+// })
 
 app.post("/api/form", (req,res)=>{
     let data = req.body
@@ -19,8 +22,8 @@ app.post("/api/form", (req,res)=>{
         service:"Gmail",
         port: 465,
         auth:{
-            user:"kr684173@gmail.com",
-            pass:"sdrahcr2020"
+            user:process.env.USER,
+            pass:process.env.PASSWORD
         }
     })
 
@@ -33,8 +36,9 @@ let mailOptions = {
             <ul>
                 <li>Name: ${data.name}</li>
                 <li>Email: ${data.email}</li>
-                <li>Mobile: ${data.mobile}</li>
-                <li>Address: ${data.address}</li>
+                <li>Mobile: ${data.mobile}</li>   
+                <li>Wedding: ${data.wedding}</li>    
+                <li>Date: ${data.startDate}</li>        
             </ul>
 
         <h3>Message</h3>
@@ -54,7 +58,11 @@ smtpTransport.close();
 
 })
 
-const PORT = process.env.PORT||3001;
+app.get("*", (req,res) => {
+    res.sendFile(path.resolve("client", "public", "index.html"))
+})
+
+const PORT = process.env.PORT||3000;
 
 app.listen(PORT,()=>{
     console.log(`server listening at port ${PORT}`);
