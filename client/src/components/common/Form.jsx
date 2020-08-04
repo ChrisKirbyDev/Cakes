@@ -34,7 +34,7 @@ class Form extends Component {
     const data =  restState;
 
     axios
-      .post("http://localhost:3000/api/form", data)
+      .post("/api/form", data)
       .then((res) => {
         this.setState(
           {
