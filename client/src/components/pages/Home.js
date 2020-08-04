@@ -5,8 +5,6 @@ import Header from "../common/header";
 import Portfolio from "../common/portfolio";
 import About from "../common/about";
 import Pricing from "../common/pricing";
-import Contact from "../common/contact";
-import Form from "../common/form";
 
 function Home(){
         return (
@@ -15,7 +13,6 @@ function Home(){
                 <Portfolio />
                 <About />
                 <Pricing />
-                <Contact />
             </div>            
         )
 }

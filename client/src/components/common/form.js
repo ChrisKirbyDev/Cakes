@@ -226,7 +226,7 @@ class Form extends Component {
                 <option value="lemon_buttercream">
                   Lemon Buttercream/Lemon Curd
                 </option>
-                <option value="creamcheese">Creamcheese</option>
+                <option value="creamcheese">Cream Cheese</option>
                 <option value="coffee_buttercream">Coffee Buttercream</option>
               </select>
             </div>
