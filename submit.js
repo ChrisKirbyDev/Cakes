@@ -36,8 +36,9 @@ let mailOptions = {
             <ul>
                 <li>Name: ${data.name}</li>
                 <li>Email: ${data.email}</li>
-                <li>Mobile: ${data.mobile}</li>
-                <li>Address: ${data.address}</li>
+                <li>Mobile: ${data.mobile}</li>   
+                <li>Wedding: ${data.wedding}</li>    
+                <li>Date: ${data.startDate}</li>        
             </ul>
 
         <h3>Message</h3>
