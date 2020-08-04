@@ -91,7 +91,7 @@
 }
 
 .card label {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
 }
 
@@ -113,6 +113,10 @@
 
 .card ul li + li {
     margin-top: 10px;
+}
+
+.card li {
+    font-size: 20px;
 }
 
 .card .btn {
@@ -137,6 +141,47 @@
 
 .card .btn:hover {
     box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5)
+}
+
+@media screen and (width: 1024px) { // Ipad Pro
+
+    .pricing-title {
+        padding: 30px;
+        margin-bottom: -15vh;
+    }
+
+    .col {
+        flex: 0 0% 75%;
+        max-width: 75%;
+        padding-left: 180px;
+        margin: 50px;
+    }
+
+    .pricing-table-wrapper {
+        padding-top: -20px;
+        height: 140vh;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }    
+
+    
+    .card label {
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .card .btn {
+        font-size: 20px;
+    }
+
+    .card li {
+        font-size: 30px;
+    }
+
+
 }
 
 @media screen and (max-width: 960px) {
@@ -172,6 +217,50 @@
     }
 }
 
+@media screen and (width: 768px) { // Ipad
+
+    .pricing-title {
+        padding: 30px;
+        margin-bottom: -15vh;
+    }
+
+    .col {
+        flex: 0 0% 75%;
+        max-width: 80%;
+        padding-left: 180px;
+    }
+
+    .pricing-table-wrapper {
+        padding-top: -20px;
+        height: 160vh;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }    
+}
+
+@media screen and (width: 450px) { // Surface Duo
+    .pricing-title {
+        padding: 30px;
+    }
+
+    .pricing-table-wrapper {
+        height: 250vh;
+    }
+}
+
+@media screen and (width: 375px) { // iPhone X
+    .pricing-title {
+        padding: 30px;
+    }
+
+    .pricing-table-wrapper {
+        height: 240vh;
+    }
+}
+
 @media screen and (width: 360px) { // Galaxy S5
     .pricing-title {
         padding: 30px;
@@ -179,17 +268,78 @@
     }
 
     .pricing-table-wrapper {
-        height: 230vh;
+        height: 250vh;
     }
 }
 
-@media screen and (width: 375px) { // iPhone X
+@media screen and (width: 320px) { // Iphone SE
     .pricing-title {
         padding: 30px;
-        margin-bottom: 10vh;
+    }
+
+    .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        z-index: 1;
     }
 
     .pricing-table-wrapper {
-        height: 200vh;
+        padding-top: -20px;
+        height: 280vh;
+        width: auto;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;        
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .card {
+        margin: 20px
+
+    }
+
+    .card h3 {
+        font-size: 50px;
+    }
+}
+
+@media screen and (width: 280px) { // Galaxy Fold
+    .pricing-title {
+        padding: 30px;
+    }
+
+    .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        z-index: 1;
+    }
+
+    .pricing-table-wrapper {
+        padding-top: -20px;
+        height: 280vh;
+        width: auto;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;        
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .card {
+        margin: 20px
+
+    }
+
+    .card h3 {
+        font-size: 50px;
     }
 }
