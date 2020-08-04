@@ -28,13 +28,13 @@
     text-align: center;
     float: right;
     width: 700px;
-    font-size: 3vh;
+    font-size: 1.25rem;
     background-color: rgba(240, 217, 218, 0.8);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 h3 {
-    font-size: 5vh;
+    font-size: 2.2rem;
     font-weight: 400;
 }
 
@@ -58,8 +58,26 @@ h3 {
     }
 }
 
-@media screen and (width: 375px) { // iPhone X
+@media screen and (width: 768px) { // iPad
+    .about-image {
+        display: block;
+        text-align: center;
+    }
 
+    .profile-image {
+        height: 600px;
+        width: auto;
+        padding: 50px 0 50px 130px;
+        box-shadow: none; 
+    }
+
+    .about-text {
+        width: 700px;
+        margin-right: 25px;
+    }
+}
+
+@media screen and (width: 450px) { // Surface Duo
     .about-image {
         display: block;
         text-align: center;
@@ -68,13 +86,32 @@ h3 {
     .profile-image {
         height: 300px;
         width: auto;
-        padding: 50px 0 50px 20px;
+        padding: 50px 0 50px 60px;
         box-shadow: none; 
     }
 
     .about-text {
-        width: 360px;
-        margin-right: 7px;
+        width: 440px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (width: 414px) { // Iphone 6/7/8 plus
+    .about-image {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-image {
+        height: 300px;
+        width: auto;
+        padding: 50px 0 50px 30px;
+        box-shadow: none; 
+    }
+
+    .about-text {
+        width: 400px;
+        margin-right: 5px;
     }
 }
 
@@ -98,6 +135,26 @@ h3 {
     }
 }
 
+@media screen and (width: 375px) { // iPhone X
+
+    .about-image {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-image {
+        height: 300px;
+        width: auto;
+        padding: 50px 0 50px 20px;
+        box-shadow: none; 
+    }
+
+    .about-text {
+        width: 360px;
+        margin-right: 7px;
+    }
+}
+
 @media screen and (width: 360px) { // Galaxy S5
     .about-image {
         display: block;
@@ -113,6 +170,45 @@ h3 {
 
     .about-text {
         width: 350px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (width: 320px) { // Iphone SE    
+    .about-image {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-image {
+        height: 300px;
+        width: auto;
+        padding: 50px 0 50px 0px;
+        box-shadow: none; 
+    }
+
+    .about-text {
+        width: 310px;
+        margin-right: 5px;
+    }
+}
+
+
+@media screen and (width: 280px) { // Galaxy Fold
+    .about-image {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-image {
+        height: 250px;
+        width: auto;
+        padding: 50px 60px 50px 0;
+        box-shadow: none; 
+    }
+
+    .about-text {
+        width: 270px;
         margin-right: 5px;
     }
 }
