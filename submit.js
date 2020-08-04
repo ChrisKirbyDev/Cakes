@@ -16,7 +16,7 @@ app.use(cors());
 //     res.send("welcome to my form")
 // })
 
-app.post("http://localhost:3000/api/form", (req, res) => {
+app.post("/api/form", (req, res) => {
   let data = req.body;
   let smtpTransport = nodemailer.createTransport({
     service: "Gmail",
