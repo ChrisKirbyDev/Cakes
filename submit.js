@@ -8,7 +8,7 @@ const path = require("path");
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.resolve("client", "public")));
 app.use(cors());
 
@@ -16,22 +16,22 @@ app.use(cors());
 //     res.send("welcome to my form")
 // })
 
-app.post("/api/form", (req,res)=>{
-    let data = req.body
-    let smtpTransport = nodemailer.createTransport({
-        service:"Gmail",
-        port: 465,
-        auth:{
-            user:process.env.USER,
-            pass:process.env.PASSWORD
-        }
-    })
+app.post("/api/form", (req, res) => {
+  let data = req.body;
+  let smtpTransport = nodemailer.createTransport({
+    service: "Gmail",
+    port: 465,
+    auth: {
+      user: process.env.USER,
+      pass: process.env.PASSWORD,
+    },
+  });
 
-let mailOptions = {
-    from:data.email,
-    to:"kr684173@gmail.com",
-    subject:`Message from ${data.name}`,
-    html:`
+  let mailOptions = {
+    from: data.email,
+    to: process.env.USER,
+    subject: `Message from ${data.name}`,
+    html: `
         <h3>Information</h3>
             <ul>
                 <li>Name: ${data.name}</li>
@@ -43,28 +43,27 @@ let mailOptions = {
 
         <h3>Message</h3>
         <p>${data.message}</p>
-    `
-};
+    `,
+  };
 
-smtpTransport.sendMail(mailOptions, (error, response)=>{
-    if(error){
-        res.send(error)
+  smtpTransport.sendMail(mailOptions, (error, response) => {
+    if (error) {
+      console.log(error);
+      res.send(error);
     } else {
-        res.send("Success")
+      res.json("Success");
     }
-})
+  });
 
-smtpTransport.close();
+  smtpTransport.close();
+});
 
-})
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("client", "public", "index.html"));
+});
 
-app.get("*", (req,res) => {
-    res.sendFile(path.resolve("client", "public", "index.html"))
-})
+const PORT = process.env.PORT || 3000;
 
-const PORT = process.env.PORT||3000;
-
-app.listen(PORT,()=>{
-    console.log(`server listening at port ${PORT}`);
-    
-})
+app.listen(PORT, () => {
+  console.log(`server listening at port ${PORT}`);
+});
