@@ -27,6 +27,8 @@ app.post("/api/form", (req, res) => {
     },
   });
 
+  const date = new Date(data.dueDate).toLocaleDateString("en-NZ", {day: 'numeric', month: 'long', year: 'numeric'})
+
   let mailOptions = {
     from: data.email,
     to: process.env.USER,
@@ -38,7 +40,9 @@ app.post("/api/form", (req, res) => {
                 <li>Email: ${data.email}</li>
                 <li>Mobile: ${data.mobile}</li>   
                 <li>Wedding: ${data.wedding}</li>    
-                <li>Date: ${data.startDate}</li>        
+                <li>Date: ${date}</li>    
+                <li>Sponge: ${data.sponge}</li> 
+                <li>Filling: ${data.filling}</li>   
             </ul>
 
         <h3>Message</h3>

@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "../assets/img/about.png";
 
 function About(){
     return(
@@ -9,7 +8,7 @@ function About(){
                 <h3>Since then, <strong>nothing has changed.</strong></h3>
             </div>            
             <div className="about-image">
-                <img className="profile-image" src={Image} alt="About Me Profile"/>
+                <img className="profile-image" src="/img/about.png" alt="About Me Profile"/>
             </div>
             <div className="about-text">
                 <h2>Here's how I got started.</h2>

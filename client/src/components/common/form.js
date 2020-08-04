@@ -4,84 +4,35 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import Image from "../assets/img/header-image.png";
 
+const INITIAL = {
+  name: "",
+  email: "",
+  mobile: "",
+  wedding: "",
+  dueDate: new Date(),
+  sponge: "",
+  filling: "",
+  message: "",
+  sent: false
+}
+
 class Form extends Component {
-  state = {
-    name: "",
-    email: "",
-    mobile: "",
-    wedding: "",
-    startDate: new Date(),
-    sponge: "",
-    filling: "",
-    message: "",
-    sent: false
-  };
+    state = INITIAL;
 
   // handle inputs
 
-  handleName = (e) => {
-    this.setState({
-      name: e.target.value
-    });
-  };
-
-  handleEmail = (e) => {
-    this.setState({
-      email: e.target.value
-    });
-  };
-
-  handleMobile = (e) => {
-    this.setState({
-      mobile: e.target.value
-    });
-  };
-
-  handleWedding = (e) => {
-    this.setState({
-      wedding: e.target.value
-    });
-  };
-
-  handleChange = (date) => {
-    this.setState({
-      startDate: date
-    });
-  };
-
-  handleSponge = (e) => {
-    this.setState({
-      sponge: e.target.value
-    });
-  };
-
-  handleFilling = (e) => {
-    this.setState({
-      filling: e.target.value
-    });
-  };
-
-  handleMessage = (e) => {
-    this.setState({
-      message: e.target.value
-    });
-  };
+  handleOnChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    this.setState({...this.state, [name]: value})
+  }
 
   // end of handle inputs
-
   formSubmit = (e) => {
     e.preventDefault();
-
-    let data = {
-      name: this.state.name,
-      email: this.state.email,
-      mobile: this.state.mobile,
-      wedding: this.state.wedding,
-      startDate: this.state.startDate,
-      sponge: this.state.sponge,
-      filling: this.state.filling,
-      message: this.state.message
-    };
+    
+    const {sent, ...restState} = this.state
+    const data =  restState;
 
     axios
       .post("http://localhost:3000/api/form", data)
@@ -101,16 +52,7 @@ class Form extends Component {
   // for resetting initial data
 
   resetForm = () => {
-    this.setState({
-      name: "",
-      email: "",
-      mobile: "",
-      wedding: "",
-      startDate: "",
-      sponge: "",
-      filling: "",
-      message: ""
-    });
+    this.setState(INITIAL);
 
     setTimeout(() => {
       this.setState({
@@ -120,7 +62,7 @@ class Form extends Component {
   };
 
   render() {
-    const { value } = this.state;
+        const { value } = this.state;
     return (
       <section className="form-section">
         <h1 className="booking-title">Booking Form</h1>
@@ -147,7 +89,8 @@ class Form extends Component {
                 placeholder="Enter your name"
                 required
                 value={this.state.name}
-                onChange={this.handleName}
+                onChange={this.handleOnChange}
+                // onChange={this.handleName}
               />
             </div>
             {/* End of Single Item */}
@@ -164,7 +107,8 @@ class Form extends Component {
                 placeholder="Enter your Email"
                 required
                 value={this.state.email}
-                onChange={this.handleEmail}
+                onChange={this.handleOnChange}
+                // onChange={this.handleEmail}
               />
             </div>
             {/* End of Single Item */}
@@ -180,7 +124,8 @@ class Form extends Component {
                 className="form-control"
                 placeholder="Enter your Mobile"
                 value={this.state.mobile}
-                onChange={this.handleMobile}
+                // onChange={this.handleMobile}
+                onChange={this.handleOnChange}
               />
             </div>
             {/* End of Single Item */}
@@ -198,9 +143,10 @@ class Form extends Component {
                 <input
                   type="radio"
                   className="radio-control"
+                  name="wedding"
                   value="yes"
                   checked={this.state.wedding === "yes"}
-                  onChange={this.handleWedding}
+                  onChange={this.handleOnChange}
                 />
               </label>
               <label>
@@ -208,9 +154,10 @@ class Form extends Component {
                 <input
                   type="radio"
                   className="radio-control"
+                  name="wedding"
                   value="no"
                   checked={this.state.wedding === "no"}
-                  onChange={this.handleWedding}
+                  onChange={this.handleOnChange}
                 />
               </label>
             </div>
@@ -223,9 +170,12 @@ class Form extends Component {
               <label>
                 <DatePicker
                   className="form-control"
-                  selected={this.state.startDate}
-                  onChange={this.handleChange}
+                  selected={this.state.dueDate}
+                  onChange={(value) => this.handleOnChange({
+                    target: {name: "dueDate", value }
+                  })}
                   dateFormat="dd/MM/yyyy"
+                  timeFormat="HH:mm"
                 />
               </label>
             </div>
@@ -235,16 +185,16 @@ class Form extends Component {
               <label>Sponge Flavour</label>
               <select
                 id="dropdown"
-                name="sponge-flavour"
+                name="sponge"
                 className="form-control"
                 required
                 value={this.state.value}
-                onChange={this.handleSponge}
+                onChange={this.handleOnChange}
               >
                 <option disabled selected value>
                   Select an option
                 </option>
-                <option value="vanila">Vanilla</option>
+                <option value="vanilla">Vanilla</option>
                 <option value="chocolate">Chocolate</option>
                 <option value="carrot">Carrot</option>
                 <option value="Coffee">Coffee</option>
@@ -261,7 +211,7 @@ class Form extends Component {
                 className="form-control"
                 required
                 value={this.state.value}
-                onChange={this.handleFilling}
+                onChange={this.handleOnChange}
               >
                 <option disabled selected value>
                   Select an option
@@ -296,7 +246,8 @@ class Form extends Component {
                 placeholder="Please give me as much detail as you can..."
                 required
                 value={this.state.message}
-                onChange={this.handleMessage}
+                // onChange={this.handleMessage}
+                onChange={this.handleOnChange}
               ></textarea>
             </div>
             {/* End of Single Item */}
