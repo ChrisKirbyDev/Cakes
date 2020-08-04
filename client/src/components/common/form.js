@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
-import Image from "../assets/img/header-image.png";
 
 const INITIAL = {
   name: "",
@@ -71,7 +70,7 @@ class Form extends Component {
         </h3>
         <img
           className="header-image"
-          src={Image}
+          src="/img/header-image.png"
           alt="Cakes By Emily Eve Header"
         />
         <div className="form-container">
