@@ -4,16 +4,16 @@
   "description": "SPA with form for cakery",
   "main": "index.js",
   "scripts": {
-    "test": "npx webpack-dev-server",
-    "dev:h": "npx webpack-dev-server --hot --inline",
-    "build": "webpack",
-    "dev:client": "webpack --watch",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "start": "node submit.js",
     "server": "nodemon submit.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run dev:h\" \"npm run server\""
+    "client": "npx webpack-dev-server --hot --inline",
+    "dev:client": "webpack --watch",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "dev:h": "concurrently \"npm run dev:client\" \"npm run server\"",
+    "test": "npx webpack-dev-server",
+    "build": "webpack",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
