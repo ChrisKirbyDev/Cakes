@@ -72,7 +72,7 @@
     color: whitesmoke;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
     .portfolio-section {
         height: 70vh;
     }
