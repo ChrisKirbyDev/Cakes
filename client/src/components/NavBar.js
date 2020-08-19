@@ -1,38 +1,44 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { MenuItems } from "./common/menuitems";
 import { Button } from "./common/Button";
-import { Link } from "react-router-dom";
 
 class Navbar extends Component {
-    state = { clicked: false }
+  state = {
+    open: false,
+  };
+  handleOpen = () => {
+    this.setState({ open: !this.state.open });
+  };
 
-    handleClick = () => {
-        this.setState({ clicked: !this.state.clicked })
-    }
-
-    render(){
-        return(            
-                <nav className="navbar" i="mainNav">
-                    <Link to="/"><img className="navbar-logo" src="/img/cbee_logo.svg" alt="website logo" /></Link>                    
-                        <div className="menu-icon" onClick={this.handleClick}>
-                            <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
-                        </div>
-                        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-                            {MenuItems.map((item, index) => {
-                                return(
-                                    <li key={index}>
-                                        <a className={item.cName} href={item.url}>
-                                        {item.title}
-                                        </a>
-                                    </li>
-                                )
-                            })}                                                        
-                        </ul>
-                        <Button>Book</Button>
-                </nav>
-            
-        );
-    }
+  render() {
+    return (
+      <nav className="navbar" i="mainNav">
+        <div onClick={() => this.props.history.push("/")}>
+          <img
+            className="navbar-logo"
+            src="/img/cbee_logo.svg"
+            alt="website logo"
+          />
+        </div>
+        <div className="menu-icon" onClick={this.handleOpen}>
+          <i className={this.state.open ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
+        <ul className={this.state.open ? "nav-menu active" : "nav-menu"}>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index} onClick={this.handleOpen}>
+                <a className={item.cName} href={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <Button>Book</Button>
+      </nav>
+    );
+  }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
