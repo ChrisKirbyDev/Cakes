@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 600px;
     margin: 1em auto;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -146,7 +146,7 @@
 
 @media screen and (max-width: 1024px) {
     .pricing-table-wrapper {
-        height: 1550px;
+        height: 1600px;
     }    
 
     .col {
