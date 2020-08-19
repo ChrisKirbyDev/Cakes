@@ -8,21 +8,17 @@ import Form from "./common/Form";
 import Navbar from "./NavBar";
 import Contact from "./common/Contact";
 
-function App(){  
-    return (
-      <Router>
+function App() {
+  return (
+    <Router>
       <div>
-       <Navbar />
-       <Route
-          path="/"
-          exact component={Home} />
-        <Route
-          path="/form"
-          exact component={Form} />
+        <Navbar />
+        <Route path="/" exact component={Home} />
+        <Route path="/form" exact component={Form} />
         <Contact />
       </div>
-      </Router>
-    )
+    </Router>
+  );
 }
 
 export default App;
