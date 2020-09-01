@@ -2,7 +2,7 @@
 
 ## Cakery Business Site
 
-Single Page Application with Submission form to email.
+Website with Submission form to email.
 
 
 
