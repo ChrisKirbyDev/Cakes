@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-function Pricing() {
+function Pricing(props) {
   return (
     <div className="pricing-section" id="pricing">
       <div className="pricing-title">
@@ -21,7 +21,7 @@ function Pricing() {
                   <li>Custom designs are also available</li>
                   <li>Get in touch with your ideas!</li>
                 </ul>
-                <div onClick={() => this.props.history.push("/form")}>
+                <div onClick={() => props.history.push("/form")}>
                   <p className="btn">Book Now</p>
                 </div>
               </div>
@@ -37,7 +37,7 @@ function Pricing() {
                   <li>For all occasions, bespoke cakes</li>
                   <li>especially for you!</li>
                 </ul>
-                <div onClick={() => this.props.history.push("/form")}>
+                <div onClick={() => props.history.push("/form")}>
                   <p className="btn">Book Now</p>
                 </div>
               </div>
@@ -51,7 +51,7 @@ function Pricing() {
                   <li>(available sizes 4", 6", 8", 10" and 12")</li>
                   <li>Get in touch for a cake consultation!</li>
                 </ul>
-                <div onClick={() => this.props.history.push("/form")}>
+                <div onClick={() => props.history.push("/form")}>
                   <p className="btn">Book Now</p>
                 </div>
               </div>
