@@ -12,33 +12,33 @@ const INITIAL = {
   sponge: "",
   filling: "",
   message: "",
-  sent: false
-}
+  sent: false,
+};
 
 class Form extends Component {
-    state = INITIAL;
+  state = INITIAL;
 
   // handle inputs
 
   handleOnChange = (e) => {
-    const name = e.target.name
-    const value = e.target.value
-    this.setState({...this.state, [name]: value})
-  }
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({ ...this.state, [name]: value });
+  };
 
   // end of handle inputs
   formSubmit = (e) => {
     e.preventDefault();
-    
-    const {sent, ...restState} = this.state
-    const data =  restState;
+
+    const { sent, ...restState } = this.state;
+    const data = restState;
 
     axios
       .post("/api/form", data)
       .then((res) => {
         this.setState(
           {
-            sent: true
+            sent: true,
           },
           this.resetForm()
         );
@@ -55,13 +55,13 @@ class Form extends Component {
 
     setTimeout(() => {
       this.setState({
-        sent: false
+        sent: false,
       });
     }, 3000);
   };
 
   render() {
-        const { value } = this.state;
+    const { value } = this.state;
     return (
       <section className="form-section">
         <h1 className="booking-title">Booking Form</h1>
@@ -170,9 +170,11 @@ class Form extends Component {
                 <DatePicker
                   className="form-control"
                   selected={this.state.dueDate}
-                  onChange={(value) => this.handleOnChange({
-                    target: {name: "dueDate", value }
-                  })}
+                  onChange={(value) =>
+                    this.handleOnChange({
+                      target: { name: "dueDate", value },
+                    })
+                  }
                   dateFormat="dd/MM/yyyy"
                   timeFormat="HH:mm"
                 />
@@ -187,12 +189,8 @@ class Form extends Component {
                 name="sponge"
                 className="form-control"
                 required
-                value={this.state.value}
                 onChange={this.handleOnChange}
               >
-                <option disabled selected value>
-                  Select an option
-                </option>
                 <option value="vanilla">Vanilla</option>
                 <option value="chocolate">Chocolate</option>
                 <option value="carrot">Carrot</option>
@@ -209,12 +207,11 @@ class Form extends Component {
                 name="filling"
                 className="form-control"
                 required
-                value={this.state.value}
                 onChange={this.handleOnChange}
               >
-                <option disabled selected value>
+                {/* <option disabled value>
                   Select an option
-                </option>
+                </option> */}
                 <option value="vanilla_buttercream">Vanilla Buttercream</option>
                 <option value="vanilla_buttercream_raspberryjam">
                   Vanilla Buttercream/Raspberry Jam
