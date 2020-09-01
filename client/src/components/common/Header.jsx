@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-function Header() {
+function Header(props) {
   return (
     <header className="header-section" id="header">
       <img
@@ -12,7 +12,7 @@ function Header() {
       <div className="header-content">
         <h1 className="header-title">Life Is Sweet.</h1>
         <h2 className="header-subtitle">Experience Love At First Bite!</h2>
-        <div onClick={() => this.props.history.push("/form")}>
+        <div onClick={() => props.history.push("/form")}>
           <button className="header-btn btn-1">Book A Consultation</button>
         </div>
       </div>
