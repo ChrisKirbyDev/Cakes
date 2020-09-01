@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { MenuItems } from "./common/menuitems";
-import { Button } from "./common/Button";
+import Link from "./common/Link";
 
 class Navbar extends Component {
   state = {
@@ -35,7 +35,7 @@ class Navbar extends Component {
             );
           })}
         </ul>
-        <Button>Book</Button>
+        <Link to="/form">Book</Link>
       </nav>
     );
   }
