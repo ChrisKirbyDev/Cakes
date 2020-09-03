@@ -1,14 +1,13 @@
 require("dotenv").config();
 const express = require("express");
-const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const path = require("path");
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve("client", "public")));
 app.use(cors());
 
@@ -27,7 +26,11 @@ app.post("/api/form", (req, res) => {
     },
   });
 
-  const date = new Date(data.dueDate).toLocaleDateString("en-NZ", {day: 'numeric', month: 'long', year: 'numeric'})
+  const date = new Date(data.dueDate).toLocaleDateString("en-NZ", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
   let mailOptions = {
     from: data.email,
