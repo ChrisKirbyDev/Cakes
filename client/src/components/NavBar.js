@@ -17,7 +17,7 @@ class Navbar extends Component {
         <div onClick={() => this.props.history.push("/")}>
           <img
             className="navbar-logo"
-            src="/img/cbee_logo.svg"
+            src="assets/img/cbee_logo.svg"
             alt="website logo"
           />
         </div>

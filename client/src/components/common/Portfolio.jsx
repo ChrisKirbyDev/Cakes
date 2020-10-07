@@ -3,12 +3,12 @@ import PortfolioImg from "./Portfolioimg";
 
 function Portfolio() {    
         let portfolioArr = [
-        <PortfolioImg src="/img/01-thumbnail.jpg" />,
-        <PortfolioImg src="/img/02-thumbnail.jpg" />,
-        <PortfolioImg src="/img/03-thumbnail.jpg" />,
-        <PortfolioImg src="/img/04-thumbnail.jpg" />,
-        <PortfolioImg src="/img/05-thumbnail.jpg" />,
-        <PortfolioImg src="/img/06-thumbnail.jpg" />
+        <PortfolioImg src="assets/img/01-thumbnail.jpg" />,
+        <PortfolioImg src="assets/img/02-thumbnail.jpg" />,
+        <PortfolioImg src="assets/img/03-thumbnail.jpg" />,
+        <PortfolioImg src="assets/img/04-thumbnail.jpg" />,
+        <PortfolioImg src="assets/img/05-thumbnail.jpg" />,
+        <PortfolioImg src="assets/img/06-thumbnail.jpg" />
     ];
         const [x, setX] = useState(0);
         const goLeft = () => {

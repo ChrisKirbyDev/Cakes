@@ -6,7 +6,7 @@ function Header(props) {
     <header className="header-section" id="header">
       <img
         className="header-image"
-        src="/img/header-image.png"
+        src="assets/img/header-image.png"
         alt="Cakes By Emily Eve Header"
       />
       <div className="header-content">
