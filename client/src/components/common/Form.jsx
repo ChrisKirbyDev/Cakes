@@ -70,7 +70,7 @@ class Form extends Component {
         </h3>
         <img
           className="header-image"
-          src="/img/header-image.png"
+          src="assets/img/header-image.png"
           alt="Cakes By Emily Eve Header"
         />
         <div className="form-container">
